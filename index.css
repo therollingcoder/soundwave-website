@@ -1,0 +1,85 @@
+.home-main-section {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.home-main-section .img-wrapper {
+    flex-grow: 1;
+    flex-direction: column;         /*This allows verticality of img*/
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+}
+
+.home-main-section .lady-image {
+    background-image: url(/images/landing-page-girl.png);
+    flex-grow: 1; /*Grow to fit the entire page*/
+    max-height: 70vh; /* vh represents the percentage of space it will take vertically*/
+    min-width: 30vw; /* vw represents the percentage of space it will take horizontally*/
+    background-size: contain; /*To prevent picture from being cropped or scaled down*/
+    background-repeat: no-repeat;
+    background-position: bottom left; 
+}
+
+.home-main-section .call-to-action {
+    display: flex; /*Everything aligns to each other*/
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin: 1rem; /*Space between image and text*/
+    align-self: center; /*Make it center*/
+}
+
+@media /*media query*/ (max-width: 900px) {
+    .home-main-section .img-wrapper {
+        display: none; /*This removes picture of the lady if img is too small*/
+    }
+   
+    .home-main-section {
+        justify-content: center; /*Allows text to be centered once image is removed*/
+    }   
+}
+
+.home-page-circle-1 {
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    background-color: rgb(188, 58, 128, .1);
+    bottom: 5vw;
+    left: 5vw;
+    z-index: -1; /*Behind everything else*/
+}
+
+.home-page-circle-2 {
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    background-color: rgb(23, 98, 167, 0.1);
+    top: 15vw;
+    left: 38vw;
+    z-index: -1;
+}
+
+.home-page-circle-3 {
+    position: absolute;
+    overflow: hidden; /*this hides the content that would be excess or overflowing*/
+    width: 45vw;
+    height: 45vw;
+    /* border-radius: 50%; get rid of this if you want to make element to be normalized*/
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.home-page-circle-3::before /*This ensures that the circle appear before the elements come into play*/ {
+    content: '';
+    transform: translate(40%, 40%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: rgb(23, 98, 167, 0.1);
+}

@@ -1,0 +1,49 @@
+.discover-main-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.discover-main-section .covers-image {
+    width: 30vw; 
+    margin-left: 2rem; /*ensures enough space*/
+    height: auto; /*ensures it doesn't become an unusual size*/
+    max-width: 350px;
+}
+
+.icon-section {
+    display: flex;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column; /*Ensures it is aligned like a column/vertical*/
+    justify-content: space-between;
+    align-items: center;
+    margin: .5rem;
+    padding: .75rem;
+    width: 100px;
+    height: 100px;
+    background-color: #202027;
+    margin-bottom: 2rem; /*spacing in the bottom margin*/
+}
+
+.icon img {
+    width: 40px;
+}
+
+@media (max-width: 800px) {      /*Learn what a media query is*/
+    .discover-main-section {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+.discover-main-section .covers-image {
+    margin-top: 2rem;
+    height: 30vh;
+    width: auto;
+}
+
+}
